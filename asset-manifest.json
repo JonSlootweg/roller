@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/roller/static/css/main.5e34062c.chunk.css",
+    "main.js": "/roller/static/js/main.974623df.chunk.js",
+    "main.js.map": "/roller/static/js/main.974623df.chunk.js.map",
+    "runtime-main.js": "/roller/static/js/runtime-main.78e0f0ba.js",
+    "runtime-main.js.map": "/roller/static/js/runtime-main.78e0f0ba.js.map",
+    "static/js/2.e5acb45d.chunk.js": "/roller/static/js/2.e5acb45d.chunk.js",
+    "static/js/2.e5acb45d.chunk.js.map": "/roller/static/js/2.e5acb45d.chunk.js.map",
+    "index.html": "/roller/index.html",
+    "precache-manifest.44788e95206017df7d20212f88fdce25.js": "/roller/precache-manifest.44788e95206017df7d20212f88fdce25.js",
+    "service-worker.js": "/roller/service-worker.js",
+    "static/css/main.5e34062c.chunk.css.map": "/roller/static/css/main.5e34062c.chunk.css.map",
+    "static/js/2.e5acb45d.chunk.js.LICENSE.txt": "/roller/static/js/2.e5acb45d.chunk.js.LICENSE.txt",
+    "static/media/2-Dice-Icon.svg": "/roller/static/media/2-Dice-Icon.04278970.svg",
+    "static/media/arrow-up-circle.svg": "/roller/static/media/arrow-up-circle.3e0ba75a.svg",
+    "static/media/homemade-dice.svg": "/roller/static/media/homemade-dice.876e4448.svg",
+    "static/media/pause-circle.svg": "/roller/static/media/pause-circle.a4eb8326.svg",
+    "static/media/play-circle.svg": "/roller/static/media/play-circle.63d6952e.svg",
+    "static/media/refresh-cw.svg": "/roller/static/media/refresh-cw.8b81b4b8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.78e0f0ba.js",
+    "static/js/2.e5acb45d.chunk.js",
+    "static/css/main.5e34062c.chunk.css",
+    "static/js/main.974623df.chunk.js"
+  ]
+}
