@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+:root {
+  --num-columns: 35;
+  --col-width: 20;
+  --gtc-random: ;
+  --gtc-animate: ;
+  --gtc-animate2: ;
+  --gtc-animate3: ;
+  --gtc-animate4: ;
+  --gtc-animate5: ;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@keyframes squeeze {
+  0% {
+    grid-template-columns: var(--gtc-random);
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  15% {
+    grid-template-columns: var(--gtc-animate);
+  }
+
+  35% {
+    grid-template-columns: var(--gtc-animate2);
+  }
+
+  55% {
+    grid-template-columns: var(--gtc-animate3);
+  }
+
+  100% {
+    grid-template-columns: var(--gtc-animate4);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes winner {
   from {
-    transform: rotate(0deg);
+    grid-template-columns: var(--gtc-animate4);
   }
+
   to {
-    transform: rotate(360deg);
+    grid-template-columns: var(--gtc-animate5);
   }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: var(--gtc-random);
+  grid-template-rows: auto;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.animated {
+  animation: squeeze 2s ease forwards, winner 2s ease 2s forwards;
+}
+
+.roll-button {
+  position: absolute;
+  background: none;
+  border: none;
+  height: 320px;
+  width: 320px;
+  top: 50%;
+  left: 50%;
+  margin-top: -160px;
+  margin-left: -160px;
+  transition: opacity 100ms;
+}
+
+.arrow-container {
+  display: flex;
+  justify-self: center;
+  font-family: "Nunito", sans-serif;
+  background: none;
+  border: none;
+}
+
+.no-dice {
+  opacity: 0;
+}
+
+.timer {
+  display: grid;
+  font-family: "Nunito", sans-serif;
+  color: white;
+  font-size: 160px;
+  line-height: 160px;
+  position: absolute;
+  background: none;
+  border: none;
+  top: 50%;
+  left: 50%;
+  margin-top: -160px;
+  margin-left: -160px;
+  opacity: 0;
+  animation: timer-fade-in 100ms ease forwards;
+  -webkit-text-stroke: 1px #404040;
+}
+
+.button-container {
+  display: flex;
+  justify-self: center;
+  font-family: "Nunito", sans-serif;
+  background: none;
+  border: none;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: white;
+
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes timer-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.roll-button:hover {
+  animation: swing 1s;
 }
