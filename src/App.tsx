@@ -3,19 +3,8 @@ import "./App.css";
 import { Container } from "./components/Container";
 import { Roll } from "./components/Roll";
 import { TimerWrapper } from "./components/TimerWrapper";
+import { shuffle, getRandomArbitraryFloor, getRandomArbitrary } from '../src/utils/util-functions'
 
-
-function getRandomArbitraryFloor(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
-function shuffle(a: Array<any>) {
-  for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 function setupAnimationVariables() {
   let curGtc = getComputedStyle(document.documentElement) //get the current value of the css variable
@@ -73,11 +62,6 @@ function setupAnimationVariables() {
 
 const colorArray = ["#ff9aa2", "#b5ead7", "#fff5ba", "#afcbff"];
 
-
-function getRandomArbitrary(min: number, max: number) {
-  return Math.random() * (max - min) + min;
-}
-
 function randArray() {
   const arr = [];
   type arrObj = {
@@ -115,11 +99,6 @@ function randArray() {
     arr.push(spcArrObj);
   }
 
-  document.documentElement.style.setProperty(
-    "--num-columns",
-    arr.length.toString()
-  );
-
   return shuffle(arr);
 }
 
@@ -137,10 +116,7 @@ function App() {
     void colContainer?.offsetWidth;
 
     document.getElementById("col-container")!.classList.add("animated");
-    console.log("RE-RENDERED");
-
     showTimer === true ? setShowTimer(false) : setShowTimer(true);
-    console.log(`showtimer after roll: ${showTimer}`);
     setShowDice(false);
     
   };

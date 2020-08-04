@@ -6,10 +6,9 @@ import Pause from "../images/pause-circle.svg";
 import Reset from "../images/refresh-cw.svg";
 import Dice from "../images/homemade-dice.svg";
 import { ArrowComponent } from "../components/Arrows";
+import { getRandomArbitraryFloor } from "../utils/util-functions"
 
-function getRandomArbitraryFloor(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
+
 
 type TimerWrapperProps = {
   handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
