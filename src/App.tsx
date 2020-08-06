@@ -3,14 +3,24 @@ import "./App.css";
 import { Container } from "./components/Container";
 import { Roll } from "./components/Roll";
 import { TimerWrapper } from "./components/TimerWrapper";
-import { shuffle, getRandomArbitraryFloor, getRandomArbitrary } from '../src/utils/util-functions'
+import {
+  shuffle,
+  getRandomArbitraryFloor,
+  getRandomArbitrary,
+} from "../src/utils/util-functions";
 
+/*
+ * setupCSSAnimationVariables sets up 5 CSS variables that each hold
+ * a grid-template-column configuration. In each variable, one of the columns
+ * is "ballooned" so that during animation  that column widens to take up
+ * a larger proportion of the page. 
+*/
 
-function setupAnimationVariables() {
+function setupCSSAnimationVariables() {
   let curGtc = getComputedStyle(document.documentElement) //get the current value of the css variable
     .getPropertyValue("--gtc-random");
 
-  let curGtcArr = curGtc.split(" ");
+  let curGtcArr = curGtc.split(" "); //transform the css variable into an array of values
   let clone = [...curGtcArr];
   let clone2 = [...curGtcArr];
   let clone3 = [...curGtcArr];
@@ -74,16 +84,16 @@ function randArray() {
     let curGtc = getComputedStyle(document.documentElement) //get the current value of the css variable
       .getPropertyValue("--gtc-random");
 
-      document.documentElement.style.setProperty(
-        "--gtc-random",
-        `${curGtc} ${getRandomArbitrary(5.0, 25.0)}fr` //each column takes up random fraction of the page
-      );
+    document.documentElement.style.setProperty(
+      "--gtc-random",
+      `${curGtc} ${getRandomArbitrary(5.0, 25.0)}fr` //each column takes up random fraction of the page
+    );
 
-    let curColor = '';
+    let curColor = "";
 
     if (i < 10) {
       curColor = colorArray[0];
-    } else if (i < 20){
+    } else if (i < 20) {
       curColor = colorArray[1];
     } else if (i < 30) {
       curColor = colorArray[2];
@@ -93,7 +103,7 @@ function randArray() {
 
     const spcArrObj = {
       index: i,
-      color: curColor
+      color: curColor,
     } as arrObj;
 
     arr.push(spcArrObj);
@@ -108,9 +118,8 @@ function App() {
   const [showTimer, setShowTimer] = useState(false);
   const [showDice, setShowDice] = useState(true);
 
-
   const roll = () => {
-    setupAnimationVariables();
+    setupCSSAnimationVariables();
     const colContainer = document.getElementById("col-container")!;
     colContainer!.classList.remove("animated");
     void colContainer?.offsetWidth;
@@ -118,7 +127,6 @@ function App() {
     document.getElementById("col-container")!.classList.add("animated");
     showTimer === true ? setShowTimer(false) : setShowTimer(true);
     setShowDice(false);
-    
   };
 
   const showTime = () => {
@@ -128,7 +136,6 @@ function App() {
   const diceTime = () => {
     return showDice === true ? <Roll handleClick={roll} /> : null;
   };
-
 
   const onAnimationStart = () => {
     setShowTimer(false);
