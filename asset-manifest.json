@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/roller/static/css/main.5e34062c.chunk.css",
-    "main.js": "/roller/static/js/main.974623df.chunk.js",
-    "main.js.map": "/roller/static/js/main.974623df.chunk.js.map",
+    "main.js": "/roller/static/js/main.11b6405f.chunk.js",
+    "main.js.map": "/roller/static/js/main.11b6405f.chunk.js.map",
     "runtime-main.js": "/roller/static/js/runtime-main.78e0f0ba.js",
     "runtime-main.js.map": "/roller/static/js/runtime-main.78e0f0ba.js.map",
     "static/js/2.e5acb45d.chunk.js": "/roller/static/js/2.e5acb45d.chunk.js",
     "static/js/2.e5acb45d.chunk.js.map": "/roller/static/js/2.e5acb45d.chunk.js.map",
     "index.html": "/roller/index.html",
-    "precache-manifest.585d241b3781912f0429ba39a88d1e0f.js": "/roller/precache-manifest.585d241b3781912f0429ba39a88d1e0f.js",
+    "precache-manifest.8680c3d857ef60cd84d813da53f83f04.js": "/roller/precache-manifest.8680c3d857ef60cd84d813da53f83f04.js",
     "service-worker.js": "/roller/service-worker.js",
     "static/css/main.5e34062c.chunk.css.map": "/roller/static/css/main.5e34062c.chunk.css.map",
     "static/js/2.e5acb45d.chunk.js.LICENSE.txt": "/roller/static/js/2.e5acb45d.chunk.js.LICENSE.txt",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.78e0f0ba.js",
     "static/js/2.e5acb45d.chunk.js",
     "static/css/main.5e34062c.chunk.css",
-    "static/js/main.974623df.chunk.js"
+    "static/js/main.11b6405f.chunk.js"
   ]
 }
