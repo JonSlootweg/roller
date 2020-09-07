@@ -18,6 +18,12 @@ export const TimerWrapper: FunctionComponent<TimerWrapperProps> = ({
   handleClick,
   children,
 }) => {
+
+  const resetTimer = (reset: Function, pause: Function) => {
+    pause();
+    reset();
+  }
+
   return (
     <div className="timer">
       <div className="arrow-container">
@@ -52,7 +58,7 @@ export const TimerWrapper: FunctionComponent<TimerWrapperProps> = ({
               <button onClick={pause}>
                 <img src={Pause} alt="Pause"></img>
               </button>
-              <button onClick={reset}>
+              <button onClick={() => resetTimer(reset, pause)}>
                 <img src={Reset} alt="Reset"></img>
               </button>
               <button onClick={handleClick}>
